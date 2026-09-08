@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://dbqqkkoma31iy"]
+
+[ext_resource type="Texture2D" uid="uid://ttmor20g5s2" path="res://AsetGambar/WhatsApp Image 2026-09-01 at 12.05.57.jpeg" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://ckrir77ee8vac" path="res://Buttons/Button_Play.tres" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://bbine2hl85r63" path="res://AsetGambar/Buat Game .png" id="2_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://bbntu2o6g51nn" path="res://Buttons/Exit.tres" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://doevggafjqhfo" path="res://AsetGambar/GaokIrengTrans.png" id="3_qe12f"]
+[ext_resource type="Texture2D" uid="uid://drssg7tr45s53" path="res://Buttons/Info.tres" id="4_qe12f"]
+
+[sub_resource type="Animation" id="Animation_jix8l"]
+resource_name = "Camera_pan"
+length = 14.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.04, 8.03, 12, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(575, 323), Vector2(549, 341), Vector2(607, 302), Vector2(575, 327), Vector2(575, 323)]
+}
+
+[sub_resource type="Animation" id="Animation_glbon"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(575, 323)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nlkkf"]
+_data = {
+&"Camera_pan": SubResource("Animation_jix8l"),
+&"RESET": SubResource("Animation_glbon")
+}
+
+[node name="MainMenu" type="Control" unique_id=48255263]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bacground" type="TextureRect" parent="." unique_id=43351755]
+layout_mode = 0
+offset_left = -50.0
+offset_top = -45.0
+offset_right = 1202.0
+offset_bottom = 698.0
+texture = ExtResource("1_glbon")
+expand_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=752097887]
+position = Vector2(575, 323)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=107124990]
+libraries/ = SubResource("AnimationLibrary_nlkkf")
+autoplay = &"Camera_pan"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=341637719]
+
+[node name="Gambar Rara" type="TextureRect" parent="CanvasLayer" unique_id=778099794]
+offset_left = -57.0
+offset_top = -29.0
+offset_right = 1175.0
+offset_bottom = 741.0
+texture = ExtResource("2_nlkkf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Judul" type="TextureRect" parent="CanvasLayer" unique_id=1766266906]
+offset_left = -64.0
+offset_top = -53.0
+offset_right = 1187.0
+offset_bottom = 681.0
+texture = ExtResource("3_qe12f")
+expand_mode = 1
+
+[node name="CenterMenu" type="VBoxContainer" parent="CanvasLayer" unique_id=793772760]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/CenterMenu" unique_id=761023166]
+custom_minimum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(280, 280)
+layout_mode = 2
+texture_normal = ExtResource("2_glbon")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BottomLeftMenu" type="HBoxContainer" parent="CanvasLayer" unique_id=442003342]
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 442.0
+offset_bottom = 107.0
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/BottomLeftMenu" unique_id=1306033501]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_nlkkf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="InfoButton" type="TextureButton" parent="CanvasLayer/BottomLeftMenu" unique_id=787059697]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("4_qe12f")
+ignore_texture_size = true
+stretch_mode = 5

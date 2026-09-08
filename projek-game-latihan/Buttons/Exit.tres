@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bbntu2o6g51nn"]
+
+[ext_resource type="Texture2D" uid="uid://cy2vgqkmor0pr" path="res://Tombol.png" id="1_w4qqi"]
+
+[resource]
+atlas = ExtResource("1_w4qqi")
+region = Rect2(269.29935, 70.98567, 67.85562, 83.958664)
