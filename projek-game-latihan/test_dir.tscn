@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cp4gvkugoy0vk"]
+
+[ext_resource type="Script" uid="uid://cb2xflt63bl16" path="res://test_dir.gd" id="1_uscgb"]
+[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="2_qxbs7"]
+
+[node name="test_dir" type="CharacterBody2D" unique_id=864247089]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=522602147]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_uscgb")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1827012783]
+texture = ExtResource("2_qxbs7")
