@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bh3h3xq2bxuxn"
+path="res://.godot/imported/Sounds of button selection in the game menu (sound effect).mp3-e0f87921a7224da07839de24a49ae427.mp3str"
+
+[deps]
+
+source_file="res://aset musik/Sounds of button selection in the game menu (sound effect).mp3"
+dest_files=["res://.godot/imported/Sounds of button selection in the game menu (sound effect).mp3-e0f87921a7224da07839de24a49ae427.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
