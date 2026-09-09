@@ -1,17 +1,30 @@
 [gd_scene format=3 uid="uid://cp4gvkugoy0vk"]
 
-[ext_resource type="Script" uid="uid://cb2xflt63bl16" path="res://scenes/enemy1_ai.gd" id="1_uscgb"]
-[ext_resource type="Texture2D" uid="uid://bw46h2ro2g5pu" path="res://scenes/icon.svg" id="2_qxbs7"]
+[ext_resource type="Script" uid="uid://cb2xflt63bl16" path="res://scenes/enemy1_ai.gd" id="1_nb0t0"]
+[ext_resource type="Texture2D" uid="uid://bw46h2ro2g5pu" path="res://scenes/icon.svg" id="2_n665k"]
+[ext_resource type="Script" uid="uid://dh26qj0c8gk3i" path="res://scenes/detector_hitbox.gd" id="3_n665k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lybi4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvfpi"]
+
 [node name="enemy" type="CharacterBody2D" unique_id=864247089]
-script = ExtResource("1_uscgb")
+script = ExtResource("1_nb0t0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1827012783]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_qxbs7")
+texture = ExtResource("2_n665k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=292687626]
 scale = Vector2(0.61, 0.61)
 shape = SubResource("RectangleShape2D_lybi4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=79677641]
+collision_layer = 65535
+collision_mask = 65535
+script = ExtResource("3_n665k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1225612088]
+scale = Vector2(0.73, 0.73)
+shape = SubResource("RectangleShape2D_xvfpi")
+debug_color = Color(0.98925954, 0, 0.29793912, 0.41960785)
