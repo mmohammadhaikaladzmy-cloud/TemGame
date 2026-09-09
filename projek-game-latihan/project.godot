@@ -13,11 +13,10 @@ config_version=5
 config/name="ProjekGameLatihan"
 run/main_scene="uid://dbqqkkoma31iy"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://scenes/icon.svg"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [physics]

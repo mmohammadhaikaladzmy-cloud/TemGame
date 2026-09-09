@@ -1,10 +1,9 @@
 [gd_scene format=4 uid="uid://j2v6dwp623eb"]
 
-[ext_resource type="Script" uid="uid://pjq6h7dvfy3d" path="res://main_test.gd" id="1_whfra"]
+[ext_resource type="Script" uid="uid://pjq6h7dvfy3d" path="res://scenes/main_test.gd" id="1_whfra"]
 [ext_resource type="Texture2D" uid="uid://cvrvw7n5yogog" path="res://tileset/TileSet.png" id="2_uue8y"]
-[ext_resource type="PackedScene" uid="uid://diygwv781k3tm" path="res://player.tscn" id="3_aac4l"]
-[ext_resource type="PackedScene" uid="uid://cp4gvkugoy0vk" path="res://test_dir.tscn" id="4_7ktct"]
-[ext_resource type="Script" uid="uid://cb2xflt63bl16" path="res://test_dir.gd" id="5_uks48"]
+[ext_resource type="PackedScene" uid="uid://diygwv781k3tm" path="res://scenes/player.tscn" id="3_aac4l"]
+[ext_resource type="PackedScene" uid="uid://cp4gvkugoy0vk" path="res://scenes/enemy1.tscn" id="4_7ktct"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mijvv"]
 texture = ExtResource("2_uue8y")
@@ -4614,4 +4613,3 @@ position = Vector2(-16, -3)
 godotsvg = NodePath("../test_dir")
 
 [node name="test_dir" parent="." unique_id=1510722256 instance=ExtResource("4_7ktct")]
-script = ExtResource("5_uks48")

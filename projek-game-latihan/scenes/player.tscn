@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://diygwv781k3tm"]
 
 [ext_resource type="Texture2D" uid="uid://dqtqoii0jn4cq" path="res://player/pocong-cropped-removebg-preview.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://ct3370r55isra" path="res://character_body_2d.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://ct3370r55isra" path="res://scenes/player_movement.gd" id="1_onrkg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lybi4"]
 
