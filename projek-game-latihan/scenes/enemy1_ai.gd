@@ -3,12 +3,14 @@ extends CharacterBody2D
 @export var speed = 50
 
 var player: CharacterBody2D
-
-func _ready():
-	player = get_tree().get_first_node_in_group("player")
+@export var canChase = false
 	
 func _physics_process(delta: float) -> void:
-	move(player)
+	if canChase:
+		if player == null:
+			player = get_tree().get_first_node_in_group("player")
+		if player:
+			move(player)
 
 func move(target):
 	var direction = (target.global_position - global_position).normalized()
