@@ -6,7 +6,6 @@ extends CharacterBody2D
 @onready var detection_shape = $detect_area/CollisionShape2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var flashlight_light = $PointLight2D
-@onready var flashlight_light2 = $PointLight2D
 var tween: Tween
 @onready var flashlight_light2 = $PointLight2D/PointLight2D # Menyesuaikan hierarki PointLight2D di scene player kamu sebelumnya
 
