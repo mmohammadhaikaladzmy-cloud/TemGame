@@ -1,21 +1,25 @@
 [gd_scene format=3 uid="uid://bc3eg6svdadcr"]
 
 [ext_resource type="Script" uid="uid://titahpcfj6hs" path="res://scenes/enemy2_ai.gd" id="1_mhmjl"]
-[ext_resource type="Texture2D" uid="uid://bw46h2ro2g5pu" path="res://scenes/icon.svg" id="2_23kvp"]
+[ext_resource type="Texture2D" uid="uid://dqtqoii0jn4cq" path="res://player/pocong-cropped-removebg-preview.png" id="2_mhmjl"]
 [ext_resource type="Script" uid="uid://dh26qj0c8gk3i" path="res://scenes/detector_hitbox.gd" id="3_4e2ig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hv4bk"]
+size = Vector2(19.836065, 19.302326)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr8xe"]
+size = Vector2(18.695652, 47.826088)
 
 [node name="enemy2" type="CharacterBody2D" unique_id=2072731826]
 script = ExtResource("1_mhmjl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1203904933]
-scale = Vector2(0.1, 0.21)
-texture = ExtResource("2_23kvp")
+position = Vector2(2.3841858e-07, -0.9999995)
+scale = Vector2(0.029115854, 0.030699583)
+texture = ExtResource("2_mhmjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1028727904]
+position = Vector2(-0.050000086, -0.4499996)
 scale = Vector2(0.61, 1.29)
 shape = SubResource("RectangleShape2D_hv4bk")
 
@@ -25,6 +29,7 @@ collision_mask = 65535
 script = ExtResource("3_4e2ig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=339556119]
+position = Vector2(-0.15000002, -0.49999988)
 scale = Vector2(0.23, 0.23)
 shape = SubResource("RectangleShape2D_qr8xe")
 debug_color = Color(0.98925954, 0, 0.29793912, 0.41960785)
