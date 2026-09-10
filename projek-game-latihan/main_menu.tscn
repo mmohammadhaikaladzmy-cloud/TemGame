@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://dc7vsow8mf6xf"]
+
+[ext_resource type="Texture2D" uid="uid://ttmor20g5s2" path="res://AsetGambar/WhatsApp Image 2026-09-01 at 12.05.57.jpeg" id="1_glbon"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_qe12f"]
+[ext_resource type="Texture2D" uid="uid://ckrir77ee8vac" path="res://Buttons/Button_Play.tres" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://bbine2hl85r63" path="res://AsetGambar/Buat Game .png" id="2_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://bbntu2o6g51nn" path="res://Buttons/Exit.tres" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://doevggafjqhfo" path="res://AsetGambar/GaokIrengTrans.png" id="3_qe12f"]
+[ext_resource type="Texture2D" uid="uid://drssg7tr45s53" path="res://Buttons/Info.tres" id="4_qe12f"]
+[ext_resource type="AudioStream" uid="uid://dkgvrsxvbjxjm" path="res://aset musik/2020-06-25_-_Dark_Shadows_-_www.FesliyanStudios.com_David_Fesliyan.mp3" id="8_8qtwp"]
+[ext_resource type="AudioStream" uid="uid://bh3h3xq2bxuxn" path="res://aset musik/Sounds of button selection in the game menu (sound effect).mp3" id="8_dy7ct"]
+
+[sub_resource type="Animation" id="Animation_jix8l"]
+resource_name = "Camera_pan"
+length = 14.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.04, 8.03, 12, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(575, 323), Vector2(549, 341), Vector2(607, 302), Vector2(575, 327), Vector2(575, 323)]
+}
+
+[sub_resource type="Animation" id="Animation_glbon"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(575, 323)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nlkkf"]
+_data = {
+&"Camera_pan": SubResource("Animation_jix8l"),
+&"RESET": SubResource("Animation_glbon")
+}
+
+[node name="MainMenu" type="Control" unique_id=48255263]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qe12f")
+
+[node name="Bacground" type="TextureRect" parent="." unique_id=43351755]
+layout_mode = 0
+offset_left = -50.0
+offset_top = -45.0
+offset_right = 1202.0
+offset_bottom = 698.0
+texture = ExtResource("1_glbon")
+expand_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=752097887]
+visible = false
+position = Vector2(575, 323)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=107124990]
+libraries/ = SubResource("AnimationLibrary_nlkkf")
+autoplay = &"Camera_pan"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=341637719]
+
+[node name="Gambar Rara" type="TextureRect" parent="CanvasLayer" unique_id=778099794]
+offset_left = -88.0
+offset_top = -108.0
+offset_right = 1179.0
+offset_bottom = 706.0
+texture = ExtResource("2_nlkkf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Judul" type="TextureRect" parent="CanvasLayer" unique_id=1766266906]
+offset_left = -64.0
+offset_top = -44.0
+offset_right = 1187.0
+offset_bottom = 681.0
+texture = ExtResource("3_qe12f")
+expand_mode = 1
+
+[node name="CenterMenu" type="VBoxContainer" parent="CanvasLayer" unique_id=793772760]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/CenterMenu" unique_id=761023166]
+custom_minimum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(280, 280)
+layout_mode = 2
+texture_normal = ExtResource("2_glbon")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BottomLeftMenu" type="HBoxContainer" parent="CanvasLayer" unique_id=442003342]
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 442.0
+offset_bottom = 107.0
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/BottomLeftMenu" unique_id=1306033501]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_nlkkf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="InfoButton" type="TextureButton" parent="CanvasLayer/BottomLeftMenu" unique_id=787059697]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("4_qe12f")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=554122649]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=813974317]
+custom_minimum_size = Vector2(90, 0)
+offset_left = 17.0
+offset_top = -111.0
+offset_right = 1138.0
+offset_bottom = 579.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 15
+text = "Hari itu, seharusnya sama seperti biasanya.
+Tetapi, seorang gadis SMA bernama Rara menyadari terjadi sesuatu yang janggal dalam perjalanannya menuju ke rumah. Gadis itu memutuskan untuk tidak kembali ke rumah dan menuju ke rumah kerabat jauhnya untuk bernaung.
+Dan firasat Rara benar, keluarga gaok yaitu keluarga dukun tersakti di seluruh nusantara runtuh dalam semalam. Rara yang merupakan bagian utama dari keluarga Gaok mengetahui keluarganya mengikat kontrak melalui pusaka-pusaka sakti dengan siluman Gaok Ireng yang akan meminta tumbal dari keluarga Gaok setiap malam satu suro. Gadis SMA itu harus memutuskan nasib keluarga Gaok kedepannya dengan mengumpulkan ketiga pusaka sakti keluarga Gaok. Pilihan jatuh di tangan Rara, kembalikan kejayaan, atau hentikan siklus penumbalan."
+vertical_alignment = 1
+
+[node name="ContinuePrompt" type="Label" parent="CanvasLayer" unique_id=2105468083]
+modulate = Color(0.9997433, 0.10992695, 0.18232891, 1)
+offset_left = 379.0
+offset_top = 522.0
+offset_right = 778.0
+offset_bottom = 599.0
+theme_override_font_sizes/font_size = 24
+text = "Tekan Dimana Saja Untuk Mulai"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="ClickSFX" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=882805816]
+stream = ExtResource("8_dy7ct")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1129437990]
+stream = ExtResource("8_8qtwp")
+volume_db = -13.618
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/CenterMenu/PlayButton" to="." method="_on_play_button_pressed"]
