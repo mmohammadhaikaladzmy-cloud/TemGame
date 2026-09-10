@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var detection_shape = $detect_area/CollisionShape2D
 @onready var flashlight_on = false
 @onready var flashlight_light = $PointLight2D
+@onready var flashlight_light2 = $PointLight2D
+
 
 func _ready() -> void:
 	add_to_group("player")
@@ -22,10 +24,13 @@ func get_input():
 		if flashlight_on:
 			detection_shape.global_scale = Vector2(21,21)
 			flashlight_light.visible = true
+			flashlight_light2.visible = true
 			print("flashlight on")
 		else:
-			detection_shape.global_scale = Vector2(7.4,7.4)
+			var tween = create_tween()
+			tween.tween_property(detection_shape, "scale", Vector2(2.41, 2.41), 1.0)
 			flashlight_light.visible = false
+			flashlight_light2.visible = false
 			print("flashlight off")
 
 func _on_detection_area_entered(area: Area2D) -> void:

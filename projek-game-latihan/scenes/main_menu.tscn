@@ -77,19 +77,19 @@ autoplay = &"Camera_pan"
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=341637719]
 
 [node name="Gambar Rara" type="TextureRect" parent="CanvasLayer" unique_id=778099794]
-offset_left = -88.0
-offset_top = -108.0
-offset_right = 1179.0
-offset_bottom = 706.0
+offset_left = -101.0
+offset_top = -55.0
+offset_right = 1166.0
+offset_bottom = 759.0
 texture = ExtResource("3_lgwnu")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Judul" type="TextureRect" parent="CanvasLayer" unique_id=1766266906]
-offset_left = -64.0
-offset_top = -44.0
-offset_right = 1187.0
-offset_bottom = 681.0
+offset_left = -58.0
+offset_top = -66.0
+offset_right = 1193.0
+offset_bottom = 659.0
 texture = ExtResource("4_flqon")
 expand_mode = 1
 
@@ -137,10 +137,10 @@ stretch_mode = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -9.0
-offset_top = -57.0
-offset_right = -9.0
-offset_bottom = -57.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -148,10 +148,10 @@ color = Color(0, 0, 0, 0)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=813974317]
 custom_minimum_size = Vector2(90, 0)
-offset_left = 75.0
-offset_top = 36.0
-offset_right = 1196.0
-offset_bottom = 726.0
+offset_left = 23.0
+offset_top = -78.0
+offset_right = 1144.0
+offset_bottom = 612.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 23
 theme_override_font_sizes/bold_italics_font_size = 15

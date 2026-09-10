@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dc7vsow8mf6xf"]
 
 [ext_resource type="Texture2D" uid="uid://ttmor20g5s2" path="res://AsetGambar/WhatsApp Image 2026-09-01 at 12.05.57.jpeg" id="1_glbon"]
-[ext_resource type="Script" path="res://main_menu.gd" id="1_qe12f"]
 [ext_resource type="Texture2D" uid="uid://ckrir77ee8vac" path="res://Buttons/Button_Play.tres" id="2_glbon"]
 [ext_resource type="Texture2D" uid="uid://bbine2hl85r63" path="res://AsetGambar/Buat Game .png" id="2_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://bbntu2o6g51nn" path="res://Buttons/Exit.tres" id="3_nlkkf"]
@@ -55,7 +54,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qe12f")
 
 [node name="Bacground" type="TextureRect" parent="." unique_id=43351755]
 layout_mode = 0
@@ -133,6 +131,9 @@ texture_normal = ExtResource("4_qe12f")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="ClickSFX" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=882805816]
+stream = ExtResource("8_dy7ct")
+
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=554122649]
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,10 +145,11 @@ color = Color(0, 0, 0, 0)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=813974317]
 custom_minimum_size = Vector2(90, 0)
-offset_left = 17.0
-offset_top = -111.0
-offset_right = 1138.0
-offset_bottom = 579.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 23
 theme_override_font_sizes/bold_italics_font_size = 15
@@ -158,22 +160,20 @@ vertical_alignment = 1
 
 [node name="ContinuePrompt" type="Label" parent="CanvasLayer" unique_id=2105468083]
 modulate = Color(0.9997433, 0.10992695, 0.18232891, 1)
-offset_left = 379.0
-offset_top = 522.0
-offset_right = 778.0
-offset_bottom = 599.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "Tekan Dimana Saja Untuk Mulai"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="ClickSFX" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=882805816]
-stream = ExtResource("8_dy7ct")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1129437990]
 stream = ExtResource("8_8qtwp")
-volume_db = -13.618
+volume_db = 2.382
 autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/CenterMenu/PlayButton" to="." method="_on_play_button_pressed"]
