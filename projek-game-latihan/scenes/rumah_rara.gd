@@ -30,10 +30,14 @@ func _ready() -> void:
 	
 	_jalankan_cutscene_jalan()
 
-func _unhandled_input(event: InputEvent) -> void:
+# PERBAIKAN DI SINI:
+func _input(event: InputEvent) -> void:
 	if _sedang_ending and _bisa_skip:
-		if (event is InputEventMouseButton and event.pressed) or (event is InputEventKey and event.pressed):
-			_pindah_ke_main_menu()
+		# Jika player menekan tombol keyboard/gamepad ATAU mengklik tombol mouse mana saja
+		if event.is_pressed():
+			if event is InputEventKey or event is InputEventMouseButton:
+				get_viewport().set_input_as_handled() # Hentikan event agar tidak bocor
+				_pindah_ke_main_menu()
 
 func _jalankan_cutscene_jalan() -> void:
 	player.set_physics_process(false)
@@ -61,12 +65,12 @@ func _tampilkan_pilihan() -> void:
 
 func _on_button_end_1_pressed() -> void:
 	_proses_fade_out_ending(
-		"[center][color=green]GOOD ENDING[/color]\n\nRara menghancurkan pusaka tersebut di reruntuhan rumahnya. Api ritual padam dan kutukan Keluarga Gaok terputus untuk selamanya.[/center]"
+		"[center][color=green][/color]\nKedamaian..?\n\nRara memilih untuk memutuskan hubungan dengan siluman Gaok Ireng, sehingga siklus penumbalan pun berakhir dan kedamaian telah tiba bagi keluarga Gaok. Akan tetapi masih ada sesuatu yang terasa janggal di keluarga Gaok, terasa ada sesuatu yang aneh.. Keluarga Gaok juga telah kehilangan kejayaannya sehingga Rara menepuh kehidupan yang sedikit kesusahan dalam hal ekonomi.[/center]"
 	)
 
 func _on_button_end_2_pressed() -> void:
 	_proses_fade_out_ending(
-		"[center][color=red]BAD ENDING[/color]\n\nRara menggenggam erat pusaka tersebut. Kegelapan dari rumah yang terbakar merasuki tubuhnya... Rara menjadi inang baru Keluarga Gaok.[/center]"
+		"[center][color=red][/color]\nOh kejayaan..\n\nRara memilih untuk melanjutkan siklus penumbalan serta menerima kejayaan yang diberikan oleh Gaok Ireng, sehingga kekayaan telah Kembali dan penumbalan khas keluarga Gaok telah Kembali. Akan tetapi bisa saja suatu hari tragedi yang dialami Rara akan terjadi Kembali terhadap keturunan Rara.[/center]"
 	)
 
 func _proses_fade_out_ending(teks_penjelasan: String) -> void:
@@ -95,6 +99,7 @@ func _proses_fade_out_ending(teks_penjelasan: String) -> void:
 	top_layer.add_child(dialog_text)
 	
 	dialog_text.bbcode_enabled = true
+	dialog_text.mouse_filter = Control.MOUSE_FILTER_IGNORE # Supaya klik mouse tidak tertahan oleh teks
 	dialog_text.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	dialog_text.size = Vector2(800, 400)
 	dialog_text.position = (get_viewport_rect().size / 2) - (dialog_text.size / 2)
