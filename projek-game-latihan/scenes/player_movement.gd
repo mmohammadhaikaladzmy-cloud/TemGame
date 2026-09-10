@@ -98,7 +98,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			game_over()
 
 func game_over():
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _physics_process(_delta: float) -> void:
 	get_input()
