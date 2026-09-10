@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://ct3370r55isra" path="res://scenes/player_movement.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://d3wxojym06viw" path="res://AsetGambar/raraa-removebg-preview.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://s685s5dya7kr" path="res://AsetGambar/flashlight.png" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://20bg4orykh5i" path="res://scenes/rara_hitbox.gd" id="3_qlg0r"]
 [ext_resource type="Script" uid="uid://doqn3odibrsvj" path="res://scenes/flashlight_look.gd" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://bbine2hl85r63" path="res://AsetGambar/Buat Game .png" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://u37qtn6c5f0g" path="res://aset musik/hl2-stalker-scream.mp3" id="7_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_dqkch")
@@ -157,11 +160,13 @@ limit_right = 1759
 limit_bottom = 1040
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=307140956]
+script = ExtResource("3_qlg0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1744635590]
 position = Vector2(2, -1)
 scale = Vector2(1.13, 2.415)
 shape = SubResource("CircleShape2D_xvfpi")
+debug_color = Color(0.9944336, 0, 0.22946265, 0.41960785)
 
 [node name="detect_area" type="Area2D" parent="." unique_id=799968183]
 collision_layer = 65535
@@ -189,3 +194,19 @@ scale = Vector2(2.195, 2.625)
 energy = 1.59
 texture = SubResource("GradientTexture2D_41s55")
 texture_scale = 0.44
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2098646182]
+
+[node name="jumpscare" type="TextureRect" parent="CanvasLayer" unique_id=1098964545]
+visible = false
+offset_left = 8.0
+offset_top = -2.0
+offset_right = 1928.0
+offset_bottom = 1078.0
+scale = Vector2(0.5961571, 0.5961571)
+texture = ExtResource("6_tuyoq")
+
+[node name="jumpscareAudio" type="AudioStreamPlayer" parent="." unique_id=488248672]
+stream = ExtResource("7_fjrip")
+volume_db = -7.324
+pitch_scale = 1.08

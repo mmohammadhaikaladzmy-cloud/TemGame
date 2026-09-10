@@ -22454,6 +22454,7 @@ z_index = -16
 tile_set = SubResource("TileSet_rowsq")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=952280533]
+visible = false
 position = Vector2(0, 5)
 color = Color(0.02745098, 0.02745098, 0.02745098, 1)
 
@@ -22493,6 +22494,7 @@ one_shot = true
 autostart = true
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="." unique_id=38450964]
+z_index = 4
 position = Vector2(0, 5)
 color = Color(0.698, 0.392, 0.243, 1)
 

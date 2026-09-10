@@ -4,9 +4,12 @@ extends CharacterBody2D
 
 @onready var detection_radius = $detect_area
 @onready var detection_shape = $detect_area/CollisionShape2D
+@onready var hitbox = $Hitbox
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var flashlight_light = $PointLight2D
 @onready var camera = $Camera2D
+@onready var jumpscare = $CanvasLayer/jumpscare
+@onready var jumpscare_sfx = $jumpscareAudio
 var tween: Tween
 
 
@@ -14,8 +17,10 @@ var flashlight_on = false
 
 func _ready() -> void:
 	add_to_group("player")
+	jumpscare.visible = false
 	detection_radius.area_entered.connect(_on_detection_area_entered)
 	detection_radius.area_exited.connect(_on_detection_area_exited)
+	hitbox.area_entered.connect(_on_hitbox_area_entered)
 
 func get_input():
 	# Get movement input
@@ -78,6 +83,22 @@ func _on_detection_area_exited(area: Area2D) -> void:
 		if ghost and "canChase" in ghost:
 			ghost.canChase = false
 			print("Ghost exited")
+
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# 			JUMPSCARE FUNCTION HERE AND GAME OVER
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("ghost_hitbox"):
+		var ghost = area.get_parent()
+		if ghost:
+			jumpscare.visible = true
+			jumpscare_sfx.play()
+			await get_tree().create_timer(5).timeout
+			
+			game_over()
+
+func game_over():
+	get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func _physics_process(_delta: float) -> void:
 	get_input()

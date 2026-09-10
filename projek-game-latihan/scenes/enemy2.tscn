@@ -15,7 +15,7 @@ script = ExtResource("1_mhmjl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1203904933]
 position = Vector2(2.3841858e-07, -0.9999995)
-scale = Vector2(0.029115854, 0.030699583)
+scale = Vector2(0.076, 0.076)
 texture = ExtResource("2_mhmjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1028727904]
@@ -29,7 +29,7 @@ collision_mask = 65535
 script = ExtResource("3_4e2ig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=339556119]
-position = Vector2(-0.15000002, -0.49999988)
-scale = Vector2(0.23, 0.23)
+position = Vector2(-1, -1)
+scale = Vector2(0.8700005, 0.8700005)
 shape = SubResource("RectangleShape2D_qr8xe")
 debug_color = Color(0.98925954, 0, 0.29793912, 0.41960785)

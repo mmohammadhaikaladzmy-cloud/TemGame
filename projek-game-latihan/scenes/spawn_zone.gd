@@ -9,7 +9,7 @@ var tween: Tween
 
 func _ready():
 	spawn_enemies()
-	camera.zoom = Vector2(0.5, 0.5)
+	camera.zoom = Vector2(0.7, 0.7)
 	canvasModulate.color = Color(0.698, 0.392, 0.243)
 
 func spawn_enemies():
