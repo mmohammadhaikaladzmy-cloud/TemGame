@@ -148,16 +148,14 @@ color = Color(0, 0, 0, 0)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=813974317]
 custom_minimum_size = Vector2(90, 0)
-offset_left = 23.0
-offset_top = -78.0
-offset_right = 1144.0
-offset_bottom = 612.0
+offset_left = 73.0
+offset_top = -153.0
+offset_right = 1085.0
+offset_bottom = 561.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 23
 theme_override_font_sizes/bold_italics_font_size = 15
-text = "Hari itu, seharusnya sama seperti biasanya.
-Tetapi, seorang gadis SMA bernama Rara menyadari terjadi sesuatu yang janggal dalam perjalanannya menuju ke rumah. Gadis itu memutuskan untuk tidak kembali ke rumah dan menuju ke rumah kerabat jauhnya untuk bernaung.
-Dan firasat Rara benar, keluarga gaok yaitu keluarga dukun tersakti di seluruh nusantara runtuh dalam semalam. Rara yang merupakan bagian utama dari keluarga Gaok mengetahui keluarganya mengikat kontrak melalui pusaka-pusaka sakti dengan siluman Gaok Ireng yang akan meminta tumbal dari keluarga Gaok setiap malam satu suro. Gadis SMA itu harus memutuskan nasib keluarga Gaok kedepannya dengan mengumpulkan ketiga pusaka sakti keluarga Gaok. Pilihan jatuh di tangan Rara, kembalikan kejayaan, atau hentikan siklus penumbalan."
+text = "Pada suatu hari saat gadis SMA Bernama Rara sampai di rumahnya dia melihat rumahnya telah menjadi kacau balau dan hancur. Dia pun terkejut akan hal tersebut dan memutuskan untuk pergi menuju rumah saudara jauhnya untuk menjadi tempat bernanung."
 vertical_alignment = 1
 
 [node name="ContinuePrompt" type="Label" parent="CanvasLayer" unique_id=2105468083]
