@@ -1,22 +1,12 @@
-[gd_scene format=4 uid="uid://j2v6dwp623eb"]
+[gd_scene format=3 uid="uid://m4kc2m0dtayu"]
 
-[ext_resource type="PackedScene" uid="uid://cp4gvkugoy0vk" path="res://scenes/enemy1.tscn" id="1_wjoj8"]
-[ext_resource type="Texture2D" uid="uid://cvrvw7n5yogog" path="res://tileset/TileSet.png" id="2_bdp8l"]
-[ext_resource type="PackedScene" uid="uid://diygwv781k3tm" path="res://scenes/player.tscn" id="3_jj0au"]
-[ext_resource type="PackedScene" uid="uid://bc3eg6svdadcr" path="res://scenes/enemy2.tscn" id="4_bdp8l"]
+[ext_resource type="Texture2D" uid="uid://cvrvw7n5yogog" path="res://tileset/TileSet.png" id="1_3c2em"]
+[ext_resource type="Texture2D" uid="uid://bfl4ojf85q356" path="res://tileset/free_pixel_16_woods.png" id="2_q2uwf"]
+[ext_resource type="Texture2D" uid="uid://jkfc1a7fgq1p" path="res://AsetGambar/FenchTok.png" id="3_3khqc"]
+[ext_resource type="Texture2D" uid="uid://dekb5touph7jx" path="res://AsetGambar/spr_old_building_7.png" id="4_uuonr"]
 
-[sub_resource type="GDScript" id="GDScript_wy0bs"]
-script/source = "extends Node2D
-
-# SomeOtherScene.gd (attached to the root of SomeOtherScene)
-# @onready var body: CharacterBody2D = %CharacterBody2D
-
-#func move_body(offset: Vector2) -> void:
-	# body.position += offset
-"
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mijvv"]
-texture = ExtResource("2_bdp8l")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm36y"]
+texture = ExtResource("1_3c2em")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -4607,22 +4597,218 @@ texture = ExtResource("2_bdp8l")
 78:64/0 = 0
 79:64/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_lybi4"]
-sources/0 = SubResource("TileSetAtlasSource_mijvv")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wqrb"]
+texture = ExtResource("2_q2uwf")
+18:0/0 = 0
+19:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+15:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+7:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
 
-[node name="Node2D" type="Node2D" unique_id=755826771]
-script = SubResource("GDScript_wy0bs")
+[sub_resource type="TileSet" id="TileSet_or5fn"]
+sources/1 = SubResource("TileSetAtlasSource_gm36y")
+sources/2 = SubResource("TileSetAtlasSource_0wqrb")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1713873371]
-position = Vector2(-24, 0)
-tile_map_data = PackedByteArray("AAD6//r/AABIADgAAAD7//r/AABJADgAAAD8//r/AABKADgAAAD9//r/AABLADgAAAD+//r/AABMADgAAAD6//v/AABIADgAAAD7//v/AABJADgAAAD8//v/AABKADgAAAD9//v/AABLADgAAAD+//v/AABMADgAAAD6//z/AABIADgAAAD7//z/AABJADgAAAD8//z/AABKADgAAAD9//z/AABLADgAAAD+//z/AABMADgAAAD6//3/AABIADgAAAD7//3/AABJADgAAAD8//3/AABKADgAAAD9//3/AABLADgAAAD+//3/AABMADgAAAD6//7/AABIADgAAAD7//7/AABJADgAAAD8//7/AABKADgAAAD9//7/AABLADgAAAD+//7/AABMADgAAAD6////AABIADgAAAD7////AABJADgAAAD8////AABKADgAAAD9////AABLADgAAAD+////AABMADgAAAD6/wAAAABIADgAAAD7/wAAAABJADgAAAD8/wAAAABKADgAAAD9/wAAAABLADgAAAD+/wAAAABMADgAAAD6/wEAAABIADgAAAD7/wEAAABJADgAAAD8/wEAAABKADgAAAD9/wEAAABLADgAAAD+/wEAAABMADgAAAD6/wIAAABIADgAAAD7/wIAAABJADgAAAD8/wIAAABKADgAAAD9/wIAAABLADgAAAD+/wIAAABMADgAAAD6/wMAAABIADgAAAD7/wMAAABJADgAAAD8/wMAAABKADgAAAD9/wMAAABLADgAAAD+/wMAAABMADgAAAD6/wQAAABIADgAAAD7/wQAAABJADgAAAD8/wQAAABKADgAAAD9/wQAAABLADgAAAD+/wQAAABMADgAAAD//wUAAABIADgAAAAAAAUAAABJADgAAAABAAUAAABKADgAAAACAAUAAABLADgAAAADAAUAAABMADgAAAD//wYAAABIADgAAAAAAAYAAABJADgAAAABAAYAAABKADgAAAACAAYAAABLADgAAAADAAYAAABMADgAAAD//wcAAABIADgAAAAAAAcAAABJADgAAAABAAcAAABKADgAAAACAAcAAABLADgAAAADAAcAAABMADgAAAD//wgAAABIADgAAAAAAAgAAABJADgAAAABAAgAAABKADgAAAACAAgAAABLADgAAAADAAgAAABMADgAAAAEAAcAAABIADgAAAAFAAcAAABJADgAAAAGAAcAAABKADgAAAAHAAcAAABLADgAAAAIAAcAAABMADgAAAAEAAYAAABIADgAAAAFAAYAAABJADgAAAAGAAYAAABKADgAAAAHAAYAAABLADgAAAAIAAYAAABMADgAAAAEAAUAAABIADgAAAAFAAUAAABJADgAAAAGAAUAAABKADgAAAAHAAUAAABLADgAAAAIAAUAAABMADgAAAAEAAQAAABIADgAAAAFAAQAAABJADgAAAAGAAQAAABKADgAAAAHAAQAAABLADgAAAAIAAQAAABMADgAAAAEAAMAAABIADgAAAAFAAMAAABJADgAAAAGAAMAAABKADgAAAAHAAMAAABLADgAAAAIAAMAAABMADgAAAAEAAIAAABIADgAAAAFAAIAAABJADgAAAAGAAIAAABKADgAAAAHAAIAAABLADgAAAAIAAIAAABMADgAAAAEAAEAAABIADgAAAAFAAEAAABJADgAAAAGAAEAAABKADgAAAAHAAEAAABLADgAAAAIAAEAAABMADgAAAAEAAAAAABIADgAAAAFAAAAAABJADgAAAAGAAAAAABKADgAAAAHAAAAAABLADgAAAAIAAAAAABMADgAAAAEAP//AABIADgAAAAFAP//AABJADgAAAAGAP//AABKADgAAAAHAP//AABLADgAAAAIAP//AABMADgAAAAEAP7/AABIADgAAAAFAP7/AABJADgAAAAGAP7/AABKADgAAAAHAP7/AABLADgAAAAIAP7/AABMADgAAAAEAP3/AABIADgAAAAFAP3/AABJADgAAAAGAP3/AABKADgAAAAHAP3/AABLADgAAAAIAP3/AABMADgAAAAEAPz/AABIADgAAAAFAPz/AABJADgAAAAGAPz/AABKADgAAAAHAPz/AABLADgAAAAIAPz/AABMADgAAAAEAPv/AABIADgAAAAFAPv/AABJADgAAAAGAPv/AABKADgAAAAHAPv/AABLADgAAAAIAPv/AABMADgAAAAEAPr/AABIADgAAAAFAPr/AABJADgAAAAGAPr/AABKADgAAAAHAPr/AABLADgAAAAIAPr/AABMADgAAAD///z/AABIADgAAAAAAPz/AABJADgAAAABAPz/AABKADgAAAACAPz/AABLADgAAAADAPz/AABMADgAAAD///3/AABIADgAAAAAAP3/AABJADgAAAABAP3/AABKADgAAAACAP3/AABLADgAAAADAP3/AABMADgAAAD///7/AABIADgAAAAAAP7/AABJADgAAAABAP7/AABKADgAAAACAP7/AABLADgAAAADAP7/AABMADgAAAD/////AABIADgAAAAAAP//AABJADgAAAABAP//AABKADgAAAACAP//AABLADgAAAADAP//AABMADgAAAD//wAAAABIADgAAAAAAAAAAABJADgAAAABAAAAAABKADgAAAACAAAAAABLADgAAAADAAAAAABMADgAAAD//wEAAABIADgAAAAAAAEAAABJADgAAAABAAEAAABKADgAAAACAAEAAABLADgAAAADAAEAAABMADgAAAD//wIAAABIADgAAAAAAAIAAABJADgAAAABAAIAAABKADgAAAACAAIAAABLADgAAAADAAIAAABMADgAAAD//wMAAABIADgAAAAAAAMAAABJADgAAAABAAMAAABKADgAAAACAAMAAABLADgAAAADAAMAAABMADgAAAD//wQAAABIADgAAAAAAAQAAABJADgAAAABAAQAAABKADgAAAACAAQAAABLADgAAAADAAQAAABMADgAAAD///v/AABIADgAAAAAAPv/AABJADgAAAABAPv/AABKADgAAAACAPv/AABLADgAAAADAPv/AABMADgAAAD///r/AABIADgAAAAAAPr/AABJADgAAAABAPr/AABKADgAAAACAPr/AABLADgAAAADAPr/AABMADgAAAD///n/AABIADgAAAAAAPn/AABJADgAAAABAPn/AABKADgAAAACAPn/AABLADgAAAADAPn/AABMADgAAAD6/wUAAABIADgAAAD7/wUAAABJADgAAAD8/wUAAABKADgAAAD9/wUAAABLADgAAAD+/wUAAABMADgAAAD6/wYAAABIADgAAAD7/wYAAABJADgAAAD8/wYAAABKADgAAAD9/wYAAABLADgAAAD+/wYAAABMADgAAAD6/wcAAABIADgAAAD7/wcAAABJADgAAAD8/wcAAABKADgAAAD9/wcAAABLADgAAAD+/wcAAABMADgAAAD6/wgAAABIADgAAAD7/wgAAABJADgAAAD8/wgAAABKADgAAAD9/wgAAABLADgAAAD+/wgAAABMADgAAAD6/wkAAABIADgAAAD7/wkAAABJADgAAAD8/wkAAABKADgAAAD9/wkAAABLADgAAAD+/wkAAABMADgAAAD//wkAAABIADgAAAAAAAkAAABJADgAAAABAAkAAABKADgAAAACAAkAAABLADgAAAADAAkAAABMADgAAAAEAAgAAABIADgAAAAFAAgAAABJADgAAAAGAAgAAABKADgAAAAHAAgAAABLADgAAAAIAAgAAABMADgAAAAEAPn/AABIADgAAAAFAPn/AABJADgAAAAGAPn/AABKADgAAAAHAPn/AABLADgAAAAIAPn/AABMADgAAAAEAPj/AABIADgAAAAFAPj/AABJADgAAAAGAPj/AABKADgAAAAHAPj/AABLADgAAAAIAPj/AABMADgAAAD///j/AABIADgAAAAAAPj/AABJADgAAAABAPj/AABKADgAAAACAPj/AABLADgAAAADAPj/AABMADgAAAD6//n/AABIADgAAAD7//n/AABJADgAAAD8//n/AABKADgAAAD9//n/AABLADgAAAD+//n/AABMADgAAAD6//j/AABIADgAAAD7//j/AABJADgAAAD8//j/AABKADgAAAD9//j/AABLADgAAAD+//j/AABMADgAAAAEAAkAAABIADgAAAAFAAkAAABJADgAAAAGAAkAAABKADgAAAAHAAkAAABLADgAAAAIAAkAAABMADgAAAA=")
-tile_set = SubResource("TileSet_lybi4")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2wd1b"]
+texture = ExtResource("3_3khqc")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
 
-[node name="enemy" parent="." unique_id=864247089 instance=ExtResource("1_wjoj8")]
-position = Vector2(243, -127)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrj1i"]
+texture = ExtResource("4_uuonr")
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
 
-[node name="Player" parent="." unique_id=162901548 instance=ExtResource("3_jj0au")]
-position = Vector2(-50, -49)
+[sub_resource type="TileSet" id="TileSet_rowsq"]
+sources/0 = SubResource("TileSetAtlasSource_2wd1b")
+sources/1 = SubResource("TileSetAtlasSource_jrj1i")
 
-[node name="enemy2" parent="." unique_id=2072731826 instance=ExtResource("4_bdp8l")]
-position = Vector2(112, -31)
+[node name="Node2D" type="Node2D" unique_id=47558614]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=97764224]
+tile_set = SubResource("TileSet_or5fn")
+format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=657882169]
+tile_set = SubResource("TileSet_rowsq")
