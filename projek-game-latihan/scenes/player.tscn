@@ -15,7 +15,7 @@ script/source = "extends Area2D
 [sub_resource type="CircleShape2D" id="CircleShape2D_hrcr8"]
 
 [sub_resource type="Gradient" id="Gradient_g2els"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+colors = PackedColorArray(1, 0.99607843, 0.87058824, 1, 0, 0, 0, 0.78431374)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lybi4"]
 gradient = SubResource("Gradient_g2els")
@@ -57,4 +57,11 @@ shape = SubResource("CircleShape2D_hrcr8")
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1468168938]
 visible = false
 texture = SubResource("GradientTexture2D_lybi4")
-texture_scale = 1.93
+texture_scale = 6.59
+
+[node name="PointLight2D" type="PointLight2D" parent="PointLight2D" unique_id=11499626]
+visible = false
+energy = 0.6
+blend_mode = 2
+texture = SubResource("GradientTexture2D_lybi4")
+texture_scale = 13.42
