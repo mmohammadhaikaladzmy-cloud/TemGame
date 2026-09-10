@@ -22,9 +22,16 @@ var prompt_tween: Tween
 var custom_info_panel: Control = null
 
 func _ready() -> void:
+	# BAKAR / PAKSA COLORRECT MENJADI FULLSCREEN
+	color_rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	color_rect.size = get_viewport_rect().size
+	
+	# Transparansi awal
 	color_rect.color.a = 0.0
-	story_label.modulate.a = 1.0
+	story_label.modulate.a = 0.0
 	story_label.visible_ratio = 0.0
+	
+	# ... (sisa kodemu yang lain)
 	play_button.disabled = false
 	
 	if continue_prompt:
@@ -163,14 +170,19 @@ func _on_play_button_pressed() -> void:
 	play_button.disabled = true
 	play_sfx_custom(0.8, 1.0)
 
-	var tween_hitam = create_tween()
-	tween_hitam.parallel().tween_property(color_rect, "color:a", 1.0, 0.8)
+	# 1. Munculkan Layar Hitam Fullscreen & Fade Out Lagu/Menu
+	var tween_hitam = create_tween().set_parallel(true)
+	tween_hitam.tween_property(color_rect, "color:a", 1.0, 0.8)
 	
 	if bgm_player:
-		tween_hitam.parallel().tween_property(bgm_player, "volume_db", -20.0, 0.8)
+		tween_hitam.tween_property(bgm_player, "volume_db", -20.0, 0.8)
 		
 	await tween_hitam.finished
 
+	# 2. MUNCULKAN TEKS CERITA (Penting!)
+	story_label.modulate.a = 1.0  # <-- Bikin teks kelihatan lagi (tidak bening)
+	story_label.visible_ratio = 0.0 # Mulai dari huruf pertama
+	
 	is_typing = true
 	var total_kata = story_label.text.split(" ", false).size()
 	var durasi_ketik = max(3.0, total_kata / 3.0)
@@ -183,6 +195,7 @@ func _on_play_button_pressed() -> void:
 	
 	is_typing = false
 
+	# 3. Tampilkan Continue Prompt ("Tekan mana saja")
 	if continue_prompt:
 		prompt_tween = create_tween().set_loops()
 		prompt_tween.tween_property(continue_prompt, "modulate:a", 1.0, 0.8)\
@@ -192,6 +205,7 @@ func _on_play_button_pressed() -> void:
 
 	await get_tree().create_timer(0.2).timeout
 
+	# 4. Tunggu Input Pemain
 	is_waiting_input = true
 	while is_waiting_input:
 		await get_tree().process_frame
@@ -199,14 +213,15 @@ func _on_play_button_pressed() -> void:
 	if prompt_tween and prompt_tween.is_valid():
 		prompt_tween.kill()
 
-	var tween_keluar = create_tween()
-	tween_keluar.parallel().tween_property(story_label, "modulate:a", 0.0, 0.8)
-	tween_keluar.parallel().tween_property(color_rect, "color:a", 0.0, 0.8)
+	# 5. Pindah Ke Scene Gameplay
+	var tween_keluar = create_tween().set_parallel(true)
+	tween_keluar.tween_property(story_label, "modulate:a", 0.0, 0.8)
+	tween_keluar.tween_property(color_rect, "color:a", 1.0, 0.8) # Tetap hitam pas mau pindah
 	if continue_prompt:
-		tween_keluar.parallel().tween_property(continue_prompt, "modulate:a", 0.0, 0.8)
+		tween_keluar.tween_property(continue_prompt, "modulate:a", 0.0, 0.8)
 	
 	if bgm_player:
-		tween_keluar.parallel().tween_property(bgm_player, "volume_db", -80.0, 0.8)
+		tween_keluar.tween_property(bgm_player, "volume_db", -80.0, 0.8)
 	
 	await tween_keluar.finished
 
