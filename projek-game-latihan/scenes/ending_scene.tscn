@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://btv76f7x77iso"]
+
+[node name="EndingScene" type="Control" unique_id=863293498]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1050896945]
+layout_mode = 1
+offset_right = 1161.0
+offset_bottom = 643.0
+color = Color(0, 0, 0, 1)
