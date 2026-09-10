@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ct3370r55isra" path="res://scenes/player_movement.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dqtqoii0jn4cq" path="res://player/pocong-cropped-removebg-preview.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://s685s5dya7kr" path="res://AsetGambar/flashlight.png" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://doqn3odibrsvj" path="res://scenes/flashlight_look.gd" id="4_dqkch"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lybi4"]
 
@@ -13,15 +15,6 @@ script/source = "extends Area2D
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hrcr8"]
-
-[sub_resource type="Gradient" id="Gradient_g2els"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lybi4"]
-gradient = SubResource("Gradient_g2els")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.23784722, 0.078125)
 
 [node name="Player" type="CharacterBody2D" unique_id=162901548]
 script = ExtResource("1_g2els")
@@ -52,10 +45,15 @@ script = SubResource("GDScript_lybi4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect_area" unique_id=1911990633]
 position = Vector2(-0.57, 0)
-scale = Vector2(4.04, 4.04)
+scale = Vector2(2.41, 2.41)
 shape = SubResource("CircleShape2D_hrcr8")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1468168938]
 visible = false
-texture = SubResource("GradientTexture2D_lybi4")
-texture_scale = 1.93
+rotation = -1.5707964
+scale = Vector2(1, 6.885)
+energy = 0.46
+texture = ExtResource("3_qhqgy")
+offset = Vector2(170, -0.325)
+texture_scale = 0.44
+script = ExtResource("4_dqkch")
