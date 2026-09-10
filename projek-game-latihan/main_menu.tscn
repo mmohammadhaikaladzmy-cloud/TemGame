@@ -173,7 +173,7 @@ autowrap_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1129437990]
 stream = ExtResource("8_8qtwp")
-volume_db = 2.382
+volume_db = 24.0
 autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/CenterMenu/PlayButton" to="." method="_on_play_button_pressed"]
