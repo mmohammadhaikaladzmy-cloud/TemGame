@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var flashlight_on = false
 @onready var flashlight_light = $PointLight2D
 @onready var flashlight_light2 = $PointLight2D
+var tween: Tween
 
 
 func _ready() -> void:
@@ -21,13 +22,19 @@ func get_input():
 	#flashlight
 	if Input.is_action_just_pressed("flashlight_toggle"):
 		flashlight_on = !flashlight_on
+		
+		if tween and tween.is_valid():
+			tween.kill()
+		
 		if flashlight_on:
 			detection_shape.global_scale = Vector2(21,21)
 			flashlight_light.visible = true
 			flashlight_light2.visible = true
 			print("flashlight on")
 		else:
-			var tween = create_tween()
+			tween = create_tween()
+			tween.set_trans(Tween.TRANS_EXPO)
+			tween.set_ease(Tween.EASE_IN)
 			tween.tween_property(detection_shape, "scale", Vector2(2.41, 2.41), 1.0)
 			flashlight_light.visible = false
 			flashlight_light2.visible = false

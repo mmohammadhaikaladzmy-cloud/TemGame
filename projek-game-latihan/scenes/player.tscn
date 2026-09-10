@@ -72,7 +72,7 @@ texture_scale = 0.44
 script = ExtResource("4_dqkch")
 
 [node name="SelfLight" type="PointLight2D" parent="." unique_id=59473440]
-scale = Vector2(2.195, 2.195)
+scale = Vector2(2.195, 2.625)
 energy = 1.59
 texture = SubResource("GradientTexture2D_41s55")
 texture_scale = 0.44
