@@ -137,6 +137,10 @@ stretch_mode = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -57.0
+offset_right = -9.0
+offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -144,10 +148,10 @@ color = Color(0, 0, 0, 0)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=813974317]
 custom_minimum_size = Vector2(90, 0)
-offset_left = 17.0
-offset_top = -111.0
-offset_right = 1138.0
-offset_bottom = 579.0
+offset_left = 75.0
+offset_top = 36.0
+offset_right = 1196.0
+offset_bottom = 726.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 23
 theme_override_font_sizes/bold_italics_font_size = 15
