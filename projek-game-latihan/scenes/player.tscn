@@ -16,14 +16,14 @@ script/source = "extends Area2D
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hrcr8"]
 
-[sub_resource type="Gradient" id="Gradient_g2els"]
-colors = PackedColorArray(1, 0.99607843, 0.87058824, 1, 0, 0, 0, 0.78431374)
+[sub_resource type="Gradient" id="Gradient_dqkch"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.85882354)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lybi4"]
-gradient = SubResource("Gradient_g2els")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_41s55"]
+gradient = SubResource("Gradient_dqkch")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.23784722, 0.078125)
+fill_to = Vector2(0.8142361, 0.14409722)
 
 [node name="Player" type="CharacterBody2D" unique_id=162901548]
 script = ExtResource("1_g2els")
@@ -66,3 +66,9 @@ texture = ExtResource("3_qhqgy")
 offset = Vector2(170, -0.325)
 texture_scale = 0.44
 script = ExtResource("4_dqkch")
+
+[node name="SelfLight" type="PointLight2D" parent="." unique_id=59473440]
+scale = Vector2(2.195, 2.195)
+energy = 1.59
+texture = SubResource("GradientTexture2D_41s55")
+texture_scale = 0.44
