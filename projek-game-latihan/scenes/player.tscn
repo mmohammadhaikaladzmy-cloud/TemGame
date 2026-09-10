@@ -51,7 +51,8 @@ input_pickable = false
 script = SubResource("GDScript_lybi4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect_area" unique_id=1911990633]
-scale = Vector2(7.4, 7.4)
+position = Vector2(-0.57, 0)
+scale = Vector2(4.04, 4.04)
 shape = SubResource("CircleShape2D_hrcr8")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1468168938]
