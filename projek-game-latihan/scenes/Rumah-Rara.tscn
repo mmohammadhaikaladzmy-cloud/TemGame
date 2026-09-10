@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://diygwv781k3tm" path="res://scenes/player.tscn" id="10_vpqyt"]
 [ext_resource type="Texture2D" uid="uid://b4nosdng257tw" path="res://tileset/Trees.png" id="11_ido8m"]
 [ext_resource type="Texture2D" uid="uid://dpyxwwt2v702x" path="res://AsetGambar/pager mps ah.png" id="12_dnssb"]
+[ext_resource type="Texture2D" uid="uid://dvhn22xugoaf6" path="res://AsetGambar/Button.png" id="14_5bbte"]
+[ext_resource type="Texture2D" uid="uid://y3jt1vmds3sy" path="res://AsetGambar/Tileset/agokIRENG.tres" id="15_rpedy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oen36"]
 texture = ExtResource("1_hv04x")
@@ -12143,19 +12145,67 @@ color = Color(0, 0, 0, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -3.0
+offset_right = 5.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ChoiceContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=983941422]
-offset_left = 184.0
-offset_top = 327.0
-offset_right = 738.0
-offset_bottom = 787.0
+anchors_preset = -1
+anchor_left = 2.7
+anchor_top = 1.74
+anchor_right = 3.115
+anchor_bottom = 1.74
+offset_left = -2839.1252
+offset_top = -764.68005
+offset_right = 526.7993
+offset_bottom = 315.31995
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.165, 0.165)
 
-[node name="ButtonEnd1" type="Button" parent="CanvasLayer/ChoiceContainer" unique_id=1755360666]
+[node name="ButtonEnd1" type="TextureButton" parent="CanvasLayer/ChoiceContainer" unique_id=1754455798]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.95
+texture_normal = ExtResource("14_5bbte")
 
-[node name="ButtonEnd2" type="Button" parent="CanvasLayer/ChoiceContainer" unique_id=917378055]
+[node name="Label" type="Label" parent="CanvasLayer/ChoiceContainer/ButtonEnd1" unique_id=1568944788]
+layout_mode = 0
+offset_left = 116.969246
+offset_top = 152.48506
+offset_right = 1755.1504
+offset_bottom = 849.4545
+theme_override_font_sizes/font_size = 96
+text = "Putuskan kontrak 
+dengan siluman gaok ireng"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonEnd2" type="TextureButton" parent="CanvasLayer/ChoiceContainer" unique_id=1968500307]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
+texture_normal = ExtResource("14_5bbte")
+
+[node name="Label" type="Label" parent="CanvasLayer/ChoiceContainer/ButtonEnd2" unique_id=503113784]
+layout_mode = 0
+offset_left = 253.5752
+offset_top = 200.96997
+offset_right = 1647.5144
+offset_bottom = 831.27295
+theme_override_font_sizes/font_size = 100
+text = "lanjutkan kontrak 
+dengan siluman gaok ireng"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=797544849]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=319056987]
+position = Vector2(902.00006, 161.00002)
+scale = Vector2(0.15584415, 0.15584415)
+texture = ExtResource("15_rpedy")

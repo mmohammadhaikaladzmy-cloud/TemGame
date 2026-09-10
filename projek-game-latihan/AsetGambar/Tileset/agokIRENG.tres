@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://y3jt1vmds3sy"]
+
+[ext_resource type="Texture2D" uid="uid://cdfl1dslmnveu" path="res://AsetGambar/gaok ireng.png" id="1_oajms"]
+
+[resource]
+atlas = ExtResource("1_oajms")
+region = Rect2(17.807693, 1002.121, 154.01958, 190.08264)
