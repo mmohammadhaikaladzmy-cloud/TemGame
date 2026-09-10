@@ -16,6 +16,18 @@ script/source = "extends Area2D
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hrcr8"]
 
+<<<<<<< HEAD
+=======
+[sub_resource type="Gradient" id="Gradient_g2els"]
+colors = PackedColorArray(1, 0.99607843, 0.87058824, 1, 0, 0, 0, 0.78431374)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lybi4"]
+gradient = SubResource("Gradient_g2els")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.23784722, 0.078125)
+
+>>>>>>> 26707e80bde69f4e39dfea9231c97aea18f61248
 [node name="Player" type="CharacterBody2D" unique_id=162901548]
 script = ExtResource("1_g2els")
 
@@ -50,6 +62,7 @@ shape = SubResource("CircleShape2D_hrcr8")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1468168938]
 visible = false
+<<<<<<< HEAD
 rotation = -1.5707964
 scale = Vector2(1, 6.885)
 energy = 0.46
@@ -57,3 +70,14 @@ texture = ExtResource("3_qhqgy")
 offset = Vector2(170, -0.325)
 texture_scale = 0.44
 script = ExtResource("4_dqkch")
+=======
+texture = SubResource("GradientTexture2D_lybi4")
+texture_scale = 6.59
+
+[node name="PointLight2D" type="PointLight2D" parent="PointLight2D" unique_id=11499626]
+visible = false
+energy = 0.6
+blend_mode = 2
+texture = SubResource("GradientTexture2D_lybi4")
+texture_scale = 13.42
+>>>>>>> 26707e80bde69f4e39dfea9231c97aea18f61248
