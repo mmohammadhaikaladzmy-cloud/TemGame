@@ -4619,7 +4619,7 @@ tile_map_data = PackedByteArray("AAD6//r/AABIADgAAAD7//r/AABJADgAAAD8//r/AABKADg
 tile_set = SubResource("TileSet_lybi4")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="TileMapLayer" unique_id=2010063642]
-color = Color(0, 0, 0, 1)
+color = Color(0.03296798, 0.03296799, 0.032968, 1)
 
 [node name="enemy" parent="." unique_id=864247089 instance=ExtResource("1_wjoj8")]
 position = Vector2(101, -108)

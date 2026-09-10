@@ -38,6 +38,10 @@ shape = SubResource("CircleShape2D_lybi4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2007632427]
 zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+limit_right = 1759
+limit_bottom = 1040
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=307140956]
 
@@ -60,7 +64,7 @@ shape = SubResource("CircleShape2D_hrcr8")
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1468168938]
 visible = false
 rotation = -1.5707964
-scale = Vector2(1, 6.885)
+scale = Vector2(1.725, 6.885)
 energy = 0.46
 texture = ExtResource("3_qhqgy")
 offset = Vector2(170, -0.325)
