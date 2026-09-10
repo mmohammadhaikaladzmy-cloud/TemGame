@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cp4gvkugoy0vk" path="res://scenes/enemy1.tscn" id="1_wjoj8"]
 [ext_resource type="Texture2D" uid="uid://cvrvw7n5yogog" path="res://tileset/TileSet.png" id="2_bdp8l"]
 [ext_resource type="PackedScene" uid="uid://diygwv781k3tm" path="res://scenes/player.tscn" id="3_jj0au"]
+[ext_resource type="PackedScene" uid="uid://bc3eg6svdadcr" path="res://scenes/enemy2.tscn" id="4_bdp8l"]
 
 [sub_resource type="GDScript" id="GDScript_wy0bs"]
 script/source = "extends Node2D
@@ -4621,7 +4622,10 @@ tile_set = SubResource("TileSet_lybi4")
 color = Color(0.13319641, 0.13319641, 0.13319638, 1)
 
 [node name="enemy" parent="." unique_id=864247089 instance=ExtResource("1_wjoj8")]
-position = Vector2(116, -29)
+position = Vector2(243, -127)
 
 [node name="Player" parent="." unique_id=162901548 instance=ExtResource("3_jj0au")]
 position = Vector2(-50, -49)
+
+[node name="enemy2" parent="." unique_id=2072731826 instance=ExtResource("4_bdp8l")]
+position = Vector2(112, -31)
