@@ -7,7 +7,6 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var flashlight_light = $PointLight2D
 var tween: Tween
-@onready var flashlight_light2 = $PointLight2D/PointLight2D # Menyesuaikan hierarki PointLight2D di scene player kamu sebelumnya
 
 var flashlight_on = false
 
@@ -34,8 +33,6 @@ func get_input():
 		if flashlight_on:
 			detection_shape.global_scale = Vector2(21, 21)
 			flashlight_light.visible = true
-			if flashlight_light2:
-				flashlight_light2.visible = true
 			print("flashlight on")
 		else:
 			tween = create_tween()
@@ -43,8 +40,6 @@ func get_input():
 			tween.set_ease(Tween.EASE_IN)
 			tween.tween_property(detection_shape, "scale", Vector2(2.41, 2.41), 1.0)
 			flashlight_light.visible = false
-			if flashlight_light2:
-				flashlight_light2.visible = false
 			print("flashlight off")
 
 func _update_animation(input_dir: Vector2) -> void:
