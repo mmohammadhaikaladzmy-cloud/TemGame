@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://lmomhqehcysv"]
 
 [ext_resource type="Texture2D" uid="uid://cvrvw7n5yogog" path="res://tileset/TileSet.png" id="1_2md2g"]
+[ext_resource type="Script" uid="uid://lb3t521uulwp" path="res://rumah_awal.gd" id="1_xbntf"]
 [ext_resource type="Texture2D" uid="uid://d0dju3mrndqnh" path="res://tileset/Trees_seperated.png" id="2_qkwi0"]
 [ext_resource type="Texture2D" uid="uid://dt2m86t2up4jb" path="res://AsetGambar/old house.png" id="3_7wbe2"]
 [ext_resource type="Texture2D" uid="uid://b4nosdng257tw" path="res://tileset/Trees.png" id="3_ev6h8"]
@@ -12012,6 +12013,7 @@ sources/2 = SubResource("TileSetAtlasSource_pnah5")
 sources/3 = SubResource("TileSetAtlasSource_qrtvf")
 
 [node name="ChapterIntro" type="Node2D" unique_id=493544309]
+script = ExtResource("1_xbntf")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1808989706]
 

@@ -11,6 +11,8 @@ func _ready():
 	spawn_enemies()
 	camera.zoom = Vector2(0.7, 0.7)
 	canvasModulate.color = Color(0.698, 0.392, 0.243)
+	camera.limit_right = 1759
+	camera.limit_bottom = 1040
 
 func spawn_enemies():
 	for i in range(enemy_count):
