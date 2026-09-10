@@ -31,4 +31,12 @@ text = "                                                                        
  
 Game ini didesain untuk orang yang sudah berumur 13+ sehingga untuk yang merasa dibawah standar umut tersebut dimohon untuk tidak memainkan dan segera keluar dari permainan ini. Game ini juga tidak cocok untuk dimainkan oleh orang yang memiliki riwayat penyakit jantung maupun memiliki penyakit yang berhubungan dengan rasa terkejut, dikarenakan game ini mengandung unsur horror serta jump scare yang dapat memberikan perasaan tidak nyaman serta bisa mengakibatkan kambuhnya penyakit jantung tersebut. Semua elemen mulai dari nama tempat, nama orang maupun unsur apapun yang ada di dalam game ini adalah unsur fiktif yang dibuat dengan imajinasi penulis cerita, sehingga jikalau ada kemiripan di dunia nayata, hal tersebut hanyalah imajinasi."
 
+[node name="SkipPrompt" type="Label" parent="CanvasLayer" unique_id=1997723460]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Space / Click untuk skip
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=210884097]
