@@ -22282,7 +22282,7 @@ sources/1 = SubResource("TileSetAtlasSource_x1d68")
 sources/2 = SubResource("TileSetAtlasSource_dw1da")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lybi4"]
-size = Vector2(18.695976, 10.54542)
+size = Vector2(16.88224, 8.969622)
 
 [node name="Node2D" type="Node2D" unique_id=47558614 node_paths=PackedStringArray("spawn_area")]
 script = ExtResource("12_7ru03")
@@ -22454,9 +22454,8 @@ z_index = -16
 tile_set = SubResource("TileSet_rowsq")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=952280533]
-visible = false
 position = Vector2(0, 5)
-color = Color(0.026175609, 0.026175614, 0.026175594, 1)
+color = Color(0.02745098, 0.02745098, 0.02745098, 1)
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=895188192]
 z_index = -16
@@ -22484,7 +22483,18 @@ tile_set = SubResource("TileSet_ifk1e")
 scale = Vector2(10.36, 10.36)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1113266602]
-position = Vector2(83.79513, 49.707504)
-scale = Vector2(10, 10)
+position = Vector2(85.27994, 54.86233)
+scale = Vector2(10.000001, 10.000001)
 shape = SubResource("RectangleShape2D_lybi4")
-disabled = true
+
+[node name="Timer" type="Timer" parent="." unique_id=89430148]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="CanvasModulate2" type="CanvasModulate" parent="." unique_id=38450964]
+position = Vector2(0, 5)
+color = Color(0.698, 0.392, 0.243, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]

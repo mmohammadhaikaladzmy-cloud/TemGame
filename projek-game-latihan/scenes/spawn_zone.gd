@@ -3,9 +3,14 @@ extends Node2D
 @export var enemy_scene: PackedScene
 @export var spawn_area: Area2D  # drag your Area2D node here
 @export var enemy_count: int = 5
+@onready var camera = $Player/Camera2D
+@onready var canvasModulate = $CanvasModulate
+var tween: Tween
 
 func _ready():
 	spawn_enemies()
+	camera.zoom = Vector2(0.5, 0.5)
+	canvasModulate.color = Color(0.698, 0.392, 0.243)
 
 func spawn_enemies():
 	for i in range(enemy_count):
@@ -37,3 +42,9 @@ func get_random_point_in_area(area: Area2D) -> Vector2:
 	# Convert from the shape's local space to global space,
 	# accounting for the CollisionShape2D's own position/rotation within the Area2D
 	return collision_shape.global_transform * local_point
+
+
+func _on_timer_timeout() -> void:
+	tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property(canvasModulate, "color", Color(0.027, 0.027, 0.027, 1), 2.0)
