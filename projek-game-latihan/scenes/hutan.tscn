@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://xlgq6wetnvab" path="res://tileset/Props.png" id="9_2wd1b"]
 [ext_resource type="Script" uid="uid://cwqgl17ym18nm" path="res://scenes/spawn_zone.gd" id="12_7ru03"]
 [ext_resource type="PackedScene" uid="uid://bc3eg6svdadcr" path="res://scenes/enemy2.tscn" id="13_x4gg2"]
+[ext_resource type="Texture2D" uid="uid://luyxdnrcbvbn" path="res://AsetGambar/keris mistis.png" id="14_2qi2b"]
+[ext_resource type="Script" uid="uid://dg3xe107vxxvl" path="res://scenes/kris.gd" id="15_ripjp"]
+[ext_resource type="Texture2D" uid="uid://brc3ld6sybqf5" path="res://AsetGambar/cimimiw-removebg-preview.png" id="16_x1d68"]
+[ext_resource type="Texture2D" uid="uid://dh8kppu20urim" path="res://AsetGambar/necklace1.png" id="17_epi8v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm36y"]
 texture = ExtResource("1_3c2em")
@@ -22282,7 +22286,7 @@ sources/1 = SubResource("TileSetAtlasSource_x1d68")
 sources/2 = SubResource("TileSetAtlasSource_dw1da")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lybi4"]
-size = Vector2(16.88224, 8.969622)
+size = Vector2(17.012547, 9.735776)
 
 [node name="Node2D" type="Node2D" unique_id=47558614 node_paths=PackedStringArray("spawn_area")]
 script = ExtResource("12_7ru03")
@@ -22454,8 +22458,9 @@ z_index = -16
 tile_set = SubResource("TileSet_rowsq")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=952280533]
+visible = false
 position = Vector2(0, 5)
-color = Color(0.02745098, 0.02745098, 0.02745098, 1)
+color = Color(0.008202014, 0.0082020275, 0.008202025, 1)
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=895188192]
 z_index = -16
@@ -22483,7 +22488,7 @@ tile_set = SubResource("TileSet_ifk1e")
 scale = Vector2(10.36, 10.36)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1113266602]
-position = Vector2(85.27994, 54.86233)
+position = Vector2(84.74903, 51.83398)
 scale = Vector2(10.000001, 10.000001)
 shape = SubResource("RectangleShape2D_lybi4")
 
@@ -22493,9 +22498,28 @@ one_shot = true
 autostart = true
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="." unique_id=38450964]
+visible = false
 z_index = 4
 position = Vector2(0, 5)
 color = Color(0.698, 0.392, 0.243, 1)
+
+[node name="kris" type="Sprite2D" parent="." unique_id=222212318]
+position = Vector2(1327, 283)
+scale = Vector2(0.30769235, 0.24285707)
+texture = ExtResource("14_2qi2b")
+script = ExtResource("15_ripjp")
+
+[node name="cimimiw" type="Sprite2D" parent="." unique_id=1491177837]
+position = Vector2(1698, 619.99994)
+scale = Vector2(0.09664697, 0.07462254)
+texture = ExtResource("16_x1d68")
+script = ExtResource("15_ripjp")
+
+[node name="Necklace" type="Sprite2D" parent="." unique_id=862006324]
+position = Vector2(723, 625.77673)
+scale = Vector2(0.34444427, 0.25803623)
+texture = ExtResource("17_epi8v")
+script = ExtResource("15_ripjp")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]
