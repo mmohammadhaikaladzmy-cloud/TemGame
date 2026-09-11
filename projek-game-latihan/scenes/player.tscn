@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://s685s5dya7kr" path="res://AsetGambar/flashlight.png" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://20bg4orykh5i" path="res://scenes/rara_hitbox.gd" id="3_qlg0r"]
 [ext_resource type="Script" uid="uid://doqn3odibrsvj" path="res://scenes/flashlight_look.gd" id="4_dqkch"]
-[ext_resource type="Texture2D" uid="uid://bbine2hl85r63" path="res://AsetGambar/Buat Game .png" id="6_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://u37qtn6c5f0g" path="res://aset musik/hl2-stalker-scream.mp3" id="7_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
@@ -138,6 +137,9 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8142361, 0.14409722)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tuyoq"]
+load_path = "res://.godot/imported/pocong-cropped-removebg-preview.png-39bda34415cfe8f93bcba036ae5fcd53.ctex"
+
 [node name="Player" type="CharacterBody2D" unique_id=162901548]
 script = ExtResource("1_g2els")
 
@@ -195,18 +197,21 @@ energy = 1.59
 texture = SubResource("GradientTexture2D_41s55")
 texture_scale = 0.44
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2098646182]
+[node name="screen_graphic" type="CanvasLayer" parent="." unique_id=2098646182]
 
-[node name="jumpscare" type="TextureRect" parent="CanvasLayer" unique_id=1098964545]
+[node name="jumpscare" type="TextureRect" parent="screen_graphic" unique_id=1098964545]
 visible = false
-offset_left = 8.0
-offset_top = -2.0
-offset_right = 1928.0
-offset_bottom = 1078.0
+offset_left = 136.0
+offset_top = -163.0
+offset_right = 1763.0879
+offset_bottom = 3238.2988
 scale = Vector2(0.5961571, 0.5961571)
-texture = ExtResource("6_tuyoq")
+texture = SubResource("CompressedTexture2D_tuyoq")
+expand_mode = 1
 
 [node name="jumpscareAudio" type="AudioStreamPlayer" parent="." unique_id=488248672]
 stream = ExtResource("7_fjrip")
 volume_db = -7.324
 pitch_scale = 1.08
+
+[connection signal="ready" from="." to="." method="_on_ready"]

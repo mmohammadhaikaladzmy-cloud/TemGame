@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://dg3xe107vxxvl" path="res://scenes/kris.gd" id="15_ripjp"]
 [ext_resource type="Texture2D" uid="uid://brc3ld6sybqf5" path="res://AsetGambar/cimimiw-removebg-preview.png" id="16_x1d68"]
 [ext_resource type="Texture2D" uid="uid://dh8kppu20urim" path="res://AsetGambar/necklace1.png" id="17_epi8v"]
+[ext_resource type="Script" uid="uid://bvtd6fth2pj2q" path="res://scenes/countdown.gd" id="18_epi8v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm36y"]
 texture = ExtResource("1_3c2em")
@@ -22458,7 +22459,6 @@ z_index = -16
 tile_set = SubResource("TileSet_rowsq")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=952280533]
-visible = false
 position = Vector2(0, 5)
 color = Color(0.008202014, 0.0082020275, 0.008202025, 1)
 
@@ -22493,12 +22493,11 @@ scale = Vector2(10.000001, 10.000001)
 shape = SubResource("RectangleShape2D_lybi4")
 
 [node name="Timer" type="Timer" parent="." unique_id=89430148]
-wait_time = 10.0
+wait_time = 7.0
 one_shot = true
 autostart = true
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="." unique_id=38450964]
-visible = false
 z_index = 4
 position = Vector2(0, 5)
 color = Color(0.698, 0.392, 0.243, 1)
@@ -22521,5 +22520,17 @@ scale = Vector2(0.34444427, 0.25803623)
 texture = ExtResource("17_epi8v")
 script = ExtResource("15_ripjp")
 
+[node name="graphics" type="CanvasLayer" parent="." unique_id=2082811826]
+
+[node name="countdown" type="Label" parent="graphics" unique_id=48351939]
+offset_left = 887.0
+offset_top = 14.0
+offset_right = 927.0
+offset_bottom = 37.0
+scale = Vector2(6.056981, 6.056981)
+script = ExtResource("18_epi8v")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="graphics/countdown" method="_on_timer_timeout"]

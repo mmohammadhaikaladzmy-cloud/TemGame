@@ -8,8 +8,9 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var flashlight_light = $PointLight2D
 @onready var camera = $Camera2D
-@onready var jumpscare = $CanvasLayer/jumpscare
+@onready var jumpscare = $screen_graphic/jumpscare
 @onready var jumpscare_sfx = $jumpscareAudio
+@onready var countdown = $screen_graphic/countdown
 var tween: Tween
 
 
@@ -104,9 +105,11 @@ func game_over():
 func _physics_process(_delta: float) -> void:
 	get_input()
 	move_and_slide()
-
-
+	
 func _on_timer_timeout() -> void:
 	tween = create_tween()
 	tween.set_ease(Tween.EASE_IN)
 	tween.tween_property(camera, "zoom", Vector2(4.0, 4.0), 2.0)
+
+func _on_ready() -> void:
+	pass

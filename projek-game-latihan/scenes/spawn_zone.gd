@@ -5,6 +5,8 @@ extends Node2D
 @export var enemy_count: int = 5
 @onready var camera = $Player/Camera2D
 @onready var canvasModulate = $CanvasModulate
+@onready var timer = $Timer
+@onready var label = $graphics/countdown
 var tween: Tween
 
 func _ready():
@@ -13,6 +15,11 @@ func _ready():
 	canvasModulate.color = Color(0.698, 0.392, 0.243)
 	camera.limit_right = 1759
 	camera.limit_bottom = 1040
+	
+
+func _process(delta: float) -> void:
+	label.text = str(timer.time_left).pad_decimals(1)
+
 
 func spawn_enemies():
 	for i in range(enemy_count):
