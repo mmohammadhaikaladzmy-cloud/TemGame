@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://luyxdnrcbvbn" path="res://AsetGambar/keris mistis.png" id="14_2qi2b"]
 [ext_resource type="Script" uid="uid://dg3xe107vxxvl" path="res://scenes/kris.gd" id="15_ripjp"]
 [ext_resource type="Texture2D" uid="uid://brc3ld6sybqf5" path="res://AsetGambar/cimimiw-removebg-preview.png" id="16_x1d68"]
+[ext_resource type="Script" uid="uid://bp4xypr8o3rm8" path="res://scenes/item_kris.gd" id="17_dw1da"]
 [ext_resource type="Texture2D" uid="uid://dh8kppu20urim" path="res://AsetGambar/necklace1.png" id="17_epi8v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm36y"]
@@ -22288,6 +22289,9 @@ sources/2 = SubResource("TileSetAtlasSource_dw1da")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lybi4"]
 size = Vector2(17.012547, 9.735776)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0s4m"]
+size = Vector2(169, 162.647)
+
 [node name="Node2D" type="Node2D" unique_id=47558614 node_paths=PackedStringArray("spawn_area")]
 script = ExtResource("12_7ru03")
 enemy_scene = ExtResource("13_x4gg2")
@@ -22458,7 +22462,6 @@ z_index = -16
 tile_set = SubResource("TileSet_rowsq")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=952280533]
-visible = false
 position = Vector2(0, 5)
 color = Color(0.008202014, 0.0082020275, 0.008202025, 1)
 
@@ -22488,7 +22491,7 @@ tile_set = SubResource("TileSet_ifk1e")
 scale = Vector2(10.36, 10.36)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1113266602]
-position = Vector2(84.74903, 51.83398)
+position = Vector2(88.12742, 49.806953)
 scale = Vector2(10.000001, 10.000001)
 shape = SubResource("RectangleShape2D_lybi4")
 
@@ -22498,28 +22501,100 @@ one_shot = true
 autostart = true
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="." unique_id=38450964]
-visible = false
 z_index = 4
 position = Vector2(0, 5)
 color = Color(0.698, 0.392, 0.243, 1)
 
-[node name="kris" type="Sprite2D" parent="." unique_id=222212318]
-position = Vector2(1327, 283)
+[node name="NotifPusaka" type="CanvasLayer" parent="." unique_id=1098334011]
+unique_name_in_owner = true
+
+[node name="GambarPusaka" type="TextureRect" parent="NotifPusaka" unique_id=117976105]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -135.0
+offset_right = 129.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TeksPusaka" type="Label" parent="NotifPusaka" unique_id=912662275]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_top = 0.48225307
+anchor_right = 1.0
+anchor_bottom = 0.5177469
+offset_left = 27.0
+offset_top = 164.5
+offset_right = 27.0
+offset_bottom = 164.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemKris" type="Area2D" parent="." unique_id=1091217539]
+position = Vector2(1331, 282)
+script = ExtResource("17_dw1da")
+nama_pusaka = "Keris Nadi Perkasa"
+gambar_gede = ExtResource("14_2qi2b")
+
+[node name="kris" type="Sprite2D" parent="ItemKris" unique_id=222212318]
+position = Vector2(0, -7.6293945e-06)
 scale = Vector2(0.30769235, 0.24285707)
 texture = ExtResource("14_2qi2b")
 script = ExtResource("15_ripjp")
 
-[node name="cimimiw" type="Sprite2D" parent="." unique_id=1491177837]
-position = Vector2(1698, 619.99994)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemKris" unique_id=697010834]
+position = Vector2(2, -2.5)
+scale = Vector2(0.30769235, 0.24285692)
+shape = SubResource("RectangleShape2D_v0s4m")
+
+[node name="ItemCincin" type="Area2D" parent="." unique_id=760688445]
+position = Vector2(1707, 531)
+script = ExtResource("17_dw1da")
+nama_pusaka = "Cincin Prakosa Wijaya"
+gambar_gede = ExtResource("16_x1d68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemCincin" unique_id=308292717]
+position = Vector2(7, 0.5)
+scale = Vector2(0.30769235, 0.24285692)
+shape = SubResource("RectangleShape2D_v0s4m")
+
+[node name="cimimiw" type="Sprite2D" parent="ItemCincin" unique_id=1491177837]
+position = Vector2(7.999999, 0)
 scale = Vector2(0.09664697, 0.07462254)
 texture = ExtResource("16_x1d68")
 script = ExtResource("15_ripjp")
 
-[node name="Necklace" type="Sprite2D" parent="." unique_id=862006324]
-position = Vector2(723, 625.77673)
-scale = Vector2(0.34444427, 0.25803623)
+[node name="ItemCincin2" type="Area2D" parent="." unique_id=307754496]
+position = Vector2(666, 663)
+script = ExtResource("17_dw1da")
+nama_pusaka = "Cincin Prakosa Wijaya"
+gambar_gede = ExtResource("16_x1d68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemCincin2" unique_id=1871350329]
+position = Vector2(22, -18)
+scale = Vector2(0.30769235, 0.24285692)
+shape = SubResource("RectangleShape2D_v0s4m")
+
+[node name="Necklace" type="Sprite2D" parent="ItemCincin2" unique_id=862006324]
+position = Vector2(21.999985, -18.223259)
+scale = Vector2(0.44444445, 0.36914742)
 texture = ExtResource("17_epi8v")
 script = ExtResource("15_ripjp")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="ItemKris" to="ItemKris" method="_on_body_entered"]
+[connection signal="body_entered" from="ItemCincin" to="ItemCincin" method="_on_body_entered"]
+[connection signal="body_entered" from="ItemCincin2" to="ItemCincin2" method="_on_body_entered"]
