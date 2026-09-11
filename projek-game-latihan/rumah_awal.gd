@@ -66,7 +66,7 @@ func _jalankan_cutscene() -> void:
 	player_camera.enabled = false
 
 	# 2. Dialog Awal
-	await _tampilkan_dialog("Rara: \"Tunggu... apa yang terjadi di sana?!\"", 2.5)
+	await _tampilkan_dialog("Rara: \"HAHH..... Apa yang terjadi di rumahku??!\"", 2.5)
 
 	# 3. Kamera bergerak ke Rumah Hancur
 	var cam_tween = create_tween()
@@ -74,8 +74,8 @@ func _jalankan_cutscene() -> void:
 	await cam_tween.finished
 
 	# 4. Dialog di Rumah Hancur
-	await _tampilkan_dialog("Rara: \"Rumahku... kenapa semuanya hancur berantakan?!\"", 3.0)
-	await _tampilkan_dialog("Rara: \"Apakah ini perbuatan siluman Gaok Ireng...?\"", 3.0)
+	await _tampilkan_dialog("Rara: \"Kenapa rumahku hancur terbakar....?\"", 3.0)
+	await _tampilkan_dialog("Rara: \"Jangan jangan ada hubungan nya ddengan gaok ireng...\"", 3.0)
 	
 	dialog_box.visible = false
 	await get_tree().create_timer(1.5).timeout
@@ -85,7 +85,7 @@ func _jalankan_cutscene() -> void:
 	cam_back_tween.tween_property(cutscene_camera, "global_position", player.global_position, 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await cam_back_tween.finished
 
-	await _tampilkan_dialog("Rara: \"Aku harus segera pergi dari sini dan mencari petunjuk di hutan!\"", 3.0)
+	await _tampilkan_dialog("Rara: \"Aku harus segera pergi dari sini!\"", 3.0)
 	dialog_box.visible = false
 
 	# 6. Rara berjalan ke kiri tanpa diikuti kamera
@@ -121,8 +121,12 @@ func _jalankan_cutscene() -> void:
 	fade_layer.add_child(dialog_box)
 
 	# --- LANJUTAN STORY KAMU BISA DITAMBAHKAN DI SINI ---
-	await _tampilkan_dialog("Rara berjalan menyusuri jalanan sepi menuju hutan kegelapan...", 3.5)
-	await _tampilkan_dialog("Tanpa ia sadari, bahaya besar sedang mengintip dari balik pepohonan.", 3.5)
+	await _tampilkan_dialog("Rara memutuskan untuk pergi ke rumah saudara jauhnya untuk mencari tempat bernaung", 3.5)
+	await _tampilkan_dialog("Rara mengingat bahwa keluarganya dulu pernah menjalin kontrak dengan siluman Gaok ireng", 3.5)
+	await _tampilkan_dialog("Rara menduga bahwa kehancuran keluarga gaok akibat melanggar pantangan dari sang siluman", 3.5)
+	await _tampilkan_dialog("Dan Rara teringat bahwa setiap malam satu suro, keluarganya akan melakukan ritual ke Gaok Ireng menggunakan 3 pusaka sakti untuk melanjutkan kejayaan keluarganya", 3.5)
+	await _tampilkan_dialog("Jika keluarganya tidak melakukan ritual maka siluman Gaok Ireng akan mengambil tumbal secara acak dari keluarga Rara. ", 3.5)
+	await _tampilkan_dialog("Rara harus segera mencari pusaka keluarganya karena, malam satu suro hanya tersisa 4 hari....", 3.5)
 	# (Kamu bisa menambah baris await _tampilkan_dialog(...) lagi jika masih ada cerita)
 
 	dialog_box.visible = false
