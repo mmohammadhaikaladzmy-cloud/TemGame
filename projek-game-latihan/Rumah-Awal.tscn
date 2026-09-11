@@ -12130,7 +12130,7 @@ tile_set = SubResource("TileSet_jlh8h")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=539391239]
 position = Vector2(35, 45)
-color = Color(0.41470394, 0.414704, 0.4147039, 1)
+color = Color(1, 0.8253121, 0.37941757, 1)
 
 [node name="CutsceneTrigger" type="Area2D" parent="." unique_id=1172963990]
 scale = Vector2(10, 10)

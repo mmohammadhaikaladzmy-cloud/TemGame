@@ -225,4 +225,4 @@ func _on_play_button_pressed() -> void:
 	
 	await tween_keluar.finished
 
-	get_tree().change_scene_to_file("res://scenes/hutan.tscn")
+	get_tree().change_scene_to_file("res://RumahAwal.tscn.tscn")
