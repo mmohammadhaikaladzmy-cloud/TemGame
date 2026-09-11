@@ -22,7 +22,7 @@ var prompt_tween: Tween
 var custom_info_panel: Control = null
 
 func _ready() -> void:
-	# BAKAR / PAKSA COLORRECT MENJADI FULLSCREEN
+	# PAKSA COLORRECT MENJADI FULLSCREEN
 	color_rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	color_rect.size = get_viewport_rect().size
 	
@@ -31,7 +31,6 @@ func _ready() -> void:
 	story_label.modulate.a = 0.0
 	story_label.visible_ratio = 0.0
 	
-	# ... (sisa kodemu yang lain)
 	play_button.disabled = false
 	
 	if continue_prompt:
@@ -101,10 +100,7 @@ func _create_custom_info_panel() -> void:
 	vbox.add_child(title)
 
 	var info_text = Label.new()
-	info_text.text = "Judul: Gaok Ireng\nDeveloper: Yummy Nobo \nGaok Ireng adalah game yang mengajak kita berpetualang bersama gadis SMA bernama Rara. Rara harus mencari ke-3 pusaka sakti keluarganya karena dia adalah bagian utama dari keluarga Gaok, keluarga dukun tersakti di Nusantara. Keluarga Gaok runtuh dalam semalam karena melanggar perjanjian dan Rara harus mencari kembali ke-3 pusaka tersebut agar bisa menentukan pilihan. Dikarenakan setiap malam satu suro akan ada penumbalan dari anggota keluarga Gaok. Dan malam satu suro hanya tersisa 29 hari lagi.
-	
-Perjalanan ini akan berujung pada satu keputusan berat yang harus kita ambil: memutus rantai tumbal berdarah itu untuk selamanya, atau kembali menghidupkan perjanjian kelam demi merengkuh kejayaan masa lalu. \nFrom: SMK Telekomunikasi Tunas Harapan
-"
+	info_text.text = "Judul: Gaok Ireng\nDeveloper: Yummy Nobo \nGaok Ireng adalah game yang mengajak kita berpetualang bersama gadis SMA bernama Rara. Rara harus mencari ke-3 pusaka sakti keluarganya karena dia adalah bagian utama dari keluarga Gaok, keluarga dukun tersakti di Nusantara. Keluarga Gaok runtuh dalam semalam karena melanggar perjanjian dan Rara harus mencari kembali ke-3 pusaka tersebut agar bisa menentukan pilihan. Dikarenakan setiap malam satu suro akan ada penumbalan dari anggota keluarga Gaok. Dan malam satu suro hanya tersisa 29 hari lagi.\n\nPerjalanan ini akan berujung pada satu keputusan berat yang harus kita ambil: memutus rantai tumbal berdarah itu untuk selamanya, atau kembali menghidupkan perjanjian kelam demi merengkuh kejayaan masa lalu. \nFrom: SMK Telekomunikasi Tunas Harapan\n"
 	info_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	info_text.autowrap_mode = TextServer.AUTOWRAP_WORD
 	info_text.custom_minimum_size = Vector2(440, 0)
@@ -170,7 +166,7 @@ func _on_play_button_pressed() -> void:
 	play_button.disabled = true
 	play_sfx_custom(0.8, 1.0)
 
-	# 1. Munculkan Layar Hitam Fullscreen & Fade Out Lagu/Menu
+	# 1. Layar Hitam Fullscreen & Fade Out Lagu
 	var tween_hitam = create_tween().set_parallel(true)
 	tween_hitam.tween_property(color_rect, "color:a", 1.0, 0.8)
 	
@@ -179,9 +175,9 @@ func _on_play_button_pressed() -> void:
 		
 	await tween_hitam.finished
 
-	# 2. MUNCULKAN TEKS CERITA (Penting!)
-	story_label.modulate.a = 1.0  # <-- Bikin teks kelihatan lagi (tidak bening)
-	story_label.visible_ratio = 0.0 # Mulai dari huruf pertama
+	# 2. MUNCULKAN TEKS CERITA INTRO
+	story_label.modulate.a = 1.0
+	story_label.visible_ratio = 0.0
 	
 	is_typing = true
 	var total_kata = story_label.text.split(" ", false).size()
@@ -195,7 +191,7 @@ func _on_play_button_pressed() -> void:
 	
 	is_typing = false
 
-	# 3. Tampilkan Continue Prompt ("Tekan mana saja")
+	# 3. Tampilkan Continue Prompt
 	if continue_prompt:
 		prompt_tween = create_tween().set_loops()
 		prompt_tween.tween_property(continue_prompt, "modulate:a", 1.0, 0.8)\
@@ -213,10 +209,10 @@ func _on_play_button_pressed() -> void:
 	if prompt_tween and prompt_tween.is_valid():
 		prompt_tween.kill()
 
-	# 5. Pindah Ke Scene Gameplay
+	# 5. Transition Keluar
 	var tween_keluar = create_tween().set_parallel(true)
 	tween_keluar.tween_property(story_label, "modulate:a", 0.0, 0.8)
-	tween_keluar.tween_property(color_rect, "color:a", 1.0, 0.8) # Tetap hitam pas mau pindah
+	tween_keluar.tween_property(color_rect, "color:a", 1.0, 0.8)
 	if continue_prompt:
 		tween_keluar.tween_property(continue_prompt, "modulate:a", 0.0, 0.8)
 	
@@ -225,4 +221,6 @@ func _on_play_button_pressed() -> void:
 	
 	await tween_keluar.finished
 
-	get_tree().change_scene_to_file("res://RumahAwal.tscn.tscn")
+	# 6. PINDAH KE SCENE RUMAH AWAL (Pastikan path file tscn kamu sesuai di FileSystem)
+	# Mengacu pada nama tab scene kamu: "Rumah-Awal.tscn"
+	get_tree().change_scene_to_file("res://Rumah-Awal.tscn")
