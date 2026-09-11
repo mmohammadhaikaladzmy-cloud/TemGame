@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://rdqyjct8tfda"]
+
+[ext_resource type="Script" uid="uid://dajbmyynwvy8t" path="res://scenes/game_over/texture_rect.gd" id="1_uyutr"]
+[ext_resource type="Script" uid="uid://drdvopebs1d10" path="res://scenes/buttontry.gd" id="2_dwo6e"]
+[ext_resource type="Script" uid="uid://82oouuwu6tqq" path="res://scenes/button_giveup.gd" id="3_mqh5l"]
+
+[sub_resource type="FontVariation" id="FontVariation_lybi4"]
+variation_embolden = 0.22
+spacing_glyph = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_u731o"]
+font = SubResource("FontVariation_lybi4")
+font_size = 26
+font_color = Color(1, 1, 1, 0.7137255)
+
+[sub_resource type="FontVariation" id="FontVariation_itto5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uyutr"]
+font = SubResource("FontVariation_itto5")
+font_size = 26
+
+[node name="DeathScreen" type="Node2D" unique_id=964228630]
+
+[node name="TextureRect" type="ColorRect" parent="." unique_id=1358881494]
+offset_right = 1160.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_uyutr")
+
+[node name="AksaraJawa" type="Label" parent="TextureRect" unique_id=584108740]
+visible = false
+layout_mode = 0
+offset_left = -1.9999995
+offset_top = -473.00003
+offset_right = 324.0
+offset_bottom = -398.00003
+scale = Vector2(3.6488543, 22.8886)
+text = "ꦩꦤꦸꦁꦒꦭꦶꦁꦏꦮꦸꦭꦒꦸꦱ꧀ꦠꦶ"
+label_settings = SubResource("LabelSettings_u731o")
+horizontal_alignment = 1
+
+[node name="Rara_died" type="Label" parent="TextureRect" unique_id=498140072]
+visible = false
+layout_mode = 0
+offset_left = 517.0
+offset_top = 246.99998
+offset_right = 631.8693
+offset_bottom = 322.0
+scale = Vector2(1.2146031, 3.6327057)
+text = "Rara
+mati."
+label_settings = SubResource("LabelSettings_uyutr")
+
+[node name="Try_again" type="Label" parent="TextureRect" unique_id=1735055067]
+layout_mode = 0
+offset_left = 355.00003
+offset_top = 209.0
+offset_right = 434.00003
+offset_bottom = 232.0
+scale = Vector2(5.1200013, 5.1200013)
+text = "Coba lagi?"
+
+[node name="Button" type="Button" parent="TextureRect/Try_again" unique_id=1051200830]
+layout_mode = 0
+offset_left = 16.601545
+offset_top = 41.796867
+offset_right = 185.60155
+offset_bottom = 72.79687
+scale = Vector2(0.27799842, 0.27799842)
+text = "- Tekadku bersikeras"
+script = ExtResource("2_dwo6e")
+
+[node name="Button2" type="Button" parent="TextureRect/Try_again" unique_id=1025579025]
+layout_mode = 0
+offset_left = 22.265606
+offset_top = 59.179672
+offset_right = 158.26561
+offset_bottom = 90.17967
+scale = Vector2(0.27799842, 0.27799842)
+text = "- Aku menyerah"
+script = ExtResource("3_mqh5l")
+
+[connection signal="button_up" from="TextureRect/Try_again/Button" to="TextureRect/Try_again/Button" method="_on_button_up"]
+[connection signal="button_up" from="TextureRect/Try_again/Button2" to="TextureRect/Try_again/Button2" method="_on_button_up"]
