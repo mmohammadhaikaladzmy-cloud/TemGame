@@ -4,12 +4,14 @@ extends Area2D
 @export var gambar_gede: Texture2D
 
 func _on_body_entered(body: Node2D) -> void:
-	# Pastikan node karakter utamamu bernama "Player"
 	if body.name == "Player":
 		
-		# 1. Sembunyikan keris kecil di map dan matikan deteksi agar tidak ke-trigger 2x
-		$kris.hide()
+		# 1. Sembunyikan sprite anak pertama dan matikan collision area ini
 		$CollisionShape2D.set_deferred("disabled", true)
+		# Menyembunyikan sprite apapun yang ada di dalam item ini secara otomatis
+		for child in get_children():
+			if child is Sprite2D:
+				child.hide()
 		
 		# 2. Masukkan gambar besar dan teks ke UI Canvas
 		%GambarPusaka.texture = gambar_gede
@@ -18,9 +20,9 @@ func _on_body_entered(body: Node2D) -> void:
 		# 3. Munculkan UI ke layar
 		%NotifPusaka.show()
 		
-		# 4. Tunggu 3 detik pakai timer bawaan Godot
+		# 4. Tunggu 3 detik
 		await get_tree().create_timer(3.0).timeout
 		
-		# 5. Sembunyikan UI kembali dan hapus data item dari game secara permanen
+		# 5. Sembunyikan UI dan hapus item dari game
 		%NotifPusaka.hide()
 		queue_free()
